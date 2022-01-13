@@ -1,7 +1,23 @@
 # slimeda
 
 Slim version of EDA processing Python package
+## Function Specification
 
+The package is under developement and includes the following functions:
+
+- **(function_name1)** : This function accepts a dataframe and builds an histogram for all numeric columns which is returned 
+as an image. The user has the option to save the image to path.
+
+- **(function_name2)** : This function accepts a dataframe and builds an heat map for all numeric columns which is returned 
+as an image. The user has the option to save the image to path.
+
+- **(function_name3)** : This function accepts a dataframe and returns a table of unique value counts for all numeric columns and
+unique values for all categorical columns.
+
+- **(function_name4)** : This function accepts a dataframe and returns a table of counts of missing values in all columns.
+
+Limitations:
+We only consider numeric and categorical columns in our package.
 ## Installation
 
 ```bash
