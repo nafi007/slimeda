@@ -11,8 +11,7 @@ as an image. The user has the option to save the image to path.
 - **(function_name2)** : This function accepts a dataframe and builds an heat map for all numeric columns which is returned 
 as an image. The user has the option to save the image to path.
 
-- **(function_name3)** : This function accepts a dataframe and returns a table of unique value counts for all numeric columns and
-unique values for all categorical columns.
+- **(function_name3)** : This function accepts a dataframe and returns a table of unique value counts for all categorical columns.
 
 - **(function_name4)** : This function accepts a dataframe and returns a table of counts of missing values in all columns.
 
