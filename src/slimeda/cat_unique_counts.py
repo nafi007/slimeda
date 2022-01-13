@@ -21,3 +21,19 @@ def cat_unique_counts(df):
     """
     
     
+# Helper function
+def _is_date(string):
+    """
+    Check if a string can be parsed as a date
+    Parameters
+    ----------
+    string : str
+            string value
+    Returns
+    -------
+    bool
+    Examples
+    --------
+    >>>_is_date('2022-01-13')
+    """
+  
