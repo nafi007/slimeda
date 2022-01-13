@@ -20,6 +20,35 @@ def cat_unique_counts(df):
     >>>cat_unique_counts(df)
     """
     
+    # check the type of data input
+    if type(df) not in VALID_TYPES :
+        raise ValueError(f'Accepts DataFrame but found : {type(df)}')
+
+    # get only object data types
+    _cat_feats = df.select_dtypes(include=['object'], 
+                        exclude= ['int64','float64', 'datetime']).columns
+
+    # get categorical features only
+    df_str = df[_cat_feats]
+
+    # check if any cat features looks like a date
+    df_is_date = df_str[df_str.columns.tolist()].applymap(_is_date).any()
+
+    # get features name that don't look like a date
+    cat_feats = list(df_is_date[df_is_date == False].index)
+
+    features = list(cat_feats)
+
+    # get unique value count of every categotical feature
+    for feature in features:
+        value_counts.append(len(df[feature].unique()))
+
+    # zip feature name and value_count as a dictionary
+    df_cat_unique = list(zip(features, value_counts))
+
+    # make them a dataframe
+    df_cat_unique = pd.DataFrame(df_cat_unique, columns=['feature name', 'unique count'])
+    return df_cat_unique
 
 
 # Helper function
