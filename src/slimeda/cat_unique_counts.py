@@ -20,7 +20,8 @@ def cat_unique_counts(df):
     >>>cat_unique_counts(df)
     """
     
-    
+
+
 # Helper function
 def _is_date(string):
     """
@@ -36,4 +37,8 @@ def _is_date(string):
     --------
     >>>_is_date('2022-01-13')
     """
-  
+    try:
+        parse(string)
+        return True
+    except ValueError:
+        return False
