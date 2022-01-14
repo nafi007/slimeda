@@ -1,16 +1,19 @@
 # slimeda
 
-Slim version of EDA processing Python package
+Exploratory Data Analysis is an important preparatory work to help data scientists understand and clean up data sets before machine learning begins. However, this step also involves a lot of repetitive tasks. In this context, slimeda will help data scientists quickly complete the initial work of EDA and gain a preliminary understanding of the data.
+
+Slimeda focuses on unique value and missing value counts, as well as making graphs like histogram and correlation graphs. Also, the generated results are designed as charts or images, which will help users more flexibly reference their EDA results.
 
 ## Installation
 
 ```bash
 $ pip install slimeda
 ```
-
+## Functions
+- Merged with Taiwo's pr.
 ## Usage
 
-- TODO
+- To do (will complete this part in milestone2)
 
 ## Contributing
 
