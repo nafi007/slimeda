@@ -11,7 +11,7 @@ The package is under developement and includes the following functions:
 - **histogram** : This function accepts a dataframe and builds histograms for all numeric columns which are returned 
 as an array of chart objects. The user has the option to save the image to path.
 
-- **corrmap** : This function accepts a dataframe and builds an heat map for all numeric columns which is returned 
+- **corr_map** : This function accepts a dataframe and builds an heat map for all numeric columns which is returned 
 as a chart object. The user has the option to save the image to path.
 
 - **cat_unique_count** : This function accepts a dataframe and returns a table of unique value counts for all categorical columns.
