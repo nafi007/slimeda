@@ -1,6 +1,9 @@
 # slimeda
 
-Slim version of EDA processing Python package
+Exploratory Data Analysis is an important preparatory work to help data scientists understand and clean up data sets before machine learning begins. However, this step also involves a lot of repetitive tasks. In this context, slimeda will help data scientists quickly complete the initial work of EDA and gain a preliminary understanding of the data.
+
+Slimeda focuses on unique value and missing value counts, as well as making graphs like histogram and correlation graphs. Also, the generated results are designed as charts or images, which will help users more flexibly reference their EDA results.
+
 ## Function Specification
 
 The package is under developement and includes the following functions:
@@ -17,15 +20,27 @@ as a chart object. The user has the option to save the image to path.
 
 Limitations:
 We only consider numeric and categorical columns in our package.
+
 ## Installation
 
 ```bash
 $ pip install slimeda
 ```
-
 ## Usage
 
-- TODO
+- To do (will complete this part in milestone2)
+
+
+## Fitting in Python Ecosystem
+Packages have similar functions are:
+
+[numpy](https://numpy.org/): can count unique value and missing value
+[pandas-profiling](https://pandas-profiling.github.io/pandas-profiling/docs/master/rtd/): can generate basic eda reports.
+Slimeda's innovation points:
+
+- We aggregate necessary functions for eda in one function that can only be done with multiple packages and simplify the code. For example, for missing value counts, we not only get the counts but also calculate its percentage.
+- Compared with numpy, we optimize the output to be more clear.
+- Compared with pandas-profiling, we generate the most commonly used graphs and make possible for png outputs, which is much more flexible for users to get their eda results.
 
 ## Contributing
 
