@@ -32,16 +32,14 @@ $ pip install slimeda
 
 
 ## Fitting in Python Ecosystem
-Packages have similar functions are:
+- Packages have similar functions are:
+    -  [numpy](https://numpy.org/): can count unique value and missing value
+    - [pandas-profiling](https://pandas-profiling.github.io/pandas-profiling/docs/master/rtd/): can generate basic eda reports.
+- Slimeda's innovation points:
 
-[numpy](https://numpy.org/): can count unique value and missing value
-[pandas-profiling](https://pandas-profiling.github.io/pandas-profiling/docs/master/rtd/): can generate basic eda reports.
-Slimeda's innovation points:
-
-- We aggregate necessary functions for eda in one function that can only be done with multiple packages and simplify the code. For example, for missing value counts, we not only get the counts but also calculate its percentage.
-- Compared with numpy, we optimize the output to be more clear.
-- Compared with pandas-profiling, we generate the most commonly used graphs and make possible for png outputs, which is much more flexible for users to get their eda results.
-
+    - We aggregate necessary functions for eda in one function that can only be done with multiple packages and simplify the code. For example, for missing value counts, we not only get the counts but also calculate its percentage.
+    - Compared with numpy, we optimize the output to be more clear.
+    - Compared with pandas-profiling, we generate the most commonly used graphs and make possible for png outputs, which is much more flexible for users to get their eda results.
 ## Contributing
 
 Interested in contributing? Check out the contributing guidelines. Please note that this project is released with a Code of Conduct. By contributing to this project, you agree to abide by its terms.
