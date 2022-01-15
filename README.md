@@ -5,15 +5,15 @@ Slim version of EDA processing Python package
 
 The package is under developement and includes the following functions:
 
-- **(function_name1)** : This function accepts a dataframe and builds an histogram for all numeric columns which is returned 
-as an image. The user has the option to save the image to path.
+- **histogram** : This function accepts a dataframe and builds histograms for all numeric columns which are returned 
+as an array of chart objects. The user has the option to save the image to path.
 
-- **(function_name2)** : This function accepts a dataframe and builds an heat map for all numeric columns which is returned 
-as an image. The user has the option to save the image to path.
+- **corrmap** : This function accepts a dataframe and builds an heat map for all numeric columns which is returned 
+as a chart object. The user has the option to save the image to path.
 
-- **(function_name3)** : This function accepts a dataframe and returns a table of unique value counts for all categorical columns.
+- **cat_unique_count** : This function accepts a dataframe and returns a table of unique value counts for all categorical columns.
 
-- **(function_name4)** : This function accepts a dataframe and returns a table of counts of missing values in all columns.
+- **miss_counts** : This function accepts a dataframe and returns a table of counts of missing values in all columns.
 
 Limitations:
 We only consider numeric and categorical columns in our package.
