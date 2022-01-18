@@ -4,8 +4,6 @@ import pandas as pd
 import numpy as np
 import pytest
 
-
-@pytest.fixture
 def df_sample():
     """Sample dataset"""
     # generate random date
@@ -35,10 +33,12 @@ def df_sample():
         np.array([[1, 2], [3, 4]]),
         "folorunsho is a girl",
         [3, 5, 9, 11],
-        9
+        9,
+        df_sample()
     ]
 )
 def test_cat_unique_counts_bad_input(bad_input):
+    """Accepts parameters and rasie errors when parameter is of wrong instance"""
     with pytest.raises(TypeError):
         cat_unique_counts(bad_input)
 
@@ -49,8 +49,10 @@ def test_cat_unique_counts():
                         ['Clarke',1,"football"]], 
                         columns=['Name','Age',"Hobby"])
 
-    df2 = pd.DataFrame([['Alex', 10, '3'],["Marry", 19, '1'],['Clarke', 1, '4']], 
-                           columns=['Name','Age',"Rate"])
+    df2 = pd.DataFrame(data = [['Alex', 10, '3'],
+                                ["Marry", 19, '1'],
+                                ['Clarke', 1, '4']], 
+                           columns=['Name','Age', "Rate"])
 
     result1 = list(cat_unique_counts(df1).iloc[:, 0])
     result2 = list(cat_unique_counts(df2).iloc[:, 0])
