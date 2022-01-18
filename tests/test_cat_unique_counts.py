@@ -4,6 +4,29 @@ import pandas as pd
 import numpy as np
 import pytest
 
+
+@pytest.fixture
+def df_sample():
+    """Sample dataset"""
+    # generate random date
+    days = np.arange(0, 30)
+    start_date = np.datetime64('2021-01-16')
+    date_col = start_date + np.random.choice(days, 10 ) 
+
+    # generate random numbers
+    numbers_col = np.random.randint(0, 100, 4)
+
+    # generate random strings
+    animal = ['rhino', 'cat', 'bufaloo', 'iguana']
+    animal_col = np.random.choice(animal, 10 , p=[0.5, 0.1, 0.1, 0.3])
+
+    #generate random string date type
+    str_date  = ['2021-01-01', '2021-01-05', '2021-01-25', '2021-01-15']
+    str_date_col = np.random.choice(str_date, 10 , p=[0.5, 0.1, 0.1, 0.3])
+
+    df = pd.DataFrame(data = [date_col, numbers_col, animal_col, str_date_col])
+    return df.T
+
 def test_cat_unique_counts():
     """Unit test for missing value counts."""
     df1 = pd.DataFrame(data = [['Jessica',10,"cook"],
@@ -14,13 +37,9 @@ def test_cat_unique_counts():
     df2 = pd.DataFrame([['Alex', 10, '3'],["Marry", 19, '1'],['Clarke', 1, '4']], 
                            columns=['Name','Age',"Rate"])
 
-    df3 = pd.DataFrame(columns=['Name','Age',"Hobby"])
-
     result1 = list(cat_unique_counts(df1).iloc[:, 0])
     result2 = list(cat_unique_counts(df2).iloc[:, 0])
-    result3 = list(cat_unique_counts(df3).iloc[:, 0])
 
     assert result1 == ['Name', 'Hobby']
     assert result2 == ['Name']
-    assert result3 == None
 
