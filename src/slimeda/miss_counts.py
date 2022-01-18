@@ -24,8 +24,9 @@ def miss_counts(df, keyword=None, sparse=False, ascending=False):
     """
     if not isinstance(df, pd.DataFrame):
         raise TypeError(" df should be of type dataframe.")
-    if not isinstance(keyword,(float,int,str)):
-        raise TypeError(" keyword should be a number or a string.")
+    if keyword is not None:
+        if not isinstance(keyword,(float,int,str)):
+            raise TypeError(" keyword should be a number or a string.")
     a = []
     for i in df.columns.values.tolist():
         a.append([i,df[i].isna().sum()+len(df.loc[df[i]==keyword])])
@@ -37,6 +38,8 @@ def miss_counts(df, keyword=None, sparse=False, ascending=False):
         results = results.loc[results["Counts"]!=0]
     if ascending == True:
         results = results.sort_values(by=["Counts"],ascending=True)
+    if ascending == False:
+        results = results.sort_values(by=["Counts"],ascending=False)
     if len(results) == 0:
         return "Congratulations! There is no null value in this dataframe"
     return results
