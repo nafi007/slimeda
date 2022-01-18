@@ -27,6 +27,21 @@ def df_sample():
     df = pd.DataFrame(data = [date_col, numbers_col, animal_col, str_date_col])
     return df.T
 
+# bad input
+@pytest.mark.parametrize(
+    "bad_input", 
+    [
+        pd.Series(data= {'a': 1, 'b': 2, 'c': 3}, index=['x', 'y', 'z']),
+        np.array([[1, 2], [3, 4]]),
+        "folorunsho is a girl",
+        [3, 5, 9, 11],
+        9
+    ]
+)
+def test_cat_unique_counts_bad_input(bad_input):
+    with pytest.raises(TypeError):
+        cat_unique_counts(bad_input)
+
 def test_cat_unique_counts():
     """Unit test for missing value counts."""
     df1 = pd.DataFrame(data = [['Jessica',10,"cook"],
