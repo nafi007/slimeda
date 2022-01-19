@@ -1,4 +1,4 @@
-
+import altair as alt
 
 def histogram(df, columns, path=""):
     """
@@ -17,3 +17,12 @@ def histogram(df, columns, path=""):
     >>>from slimeda import histogram
     >>>histogram(df, ['age', 'income'])
     """
+
+    charts = []
+    for col in columns:
+        current_chart = alt.Chart(df).mark_bar().encode(
+            x=alt.X(col, bin=True),
+            y="count()"
+        )
+        charts.append(current_chart)
+    return charts
