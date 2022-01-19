@@ -3,7 +3,8 @@ import pandas as pd
 
 def histogram(df, columns, path=""):
     """
-    Creates histogram chart objects for specific columns in a data frame
+    Creates histogram chart objects for specific columns in a data frame and optionally saves
+    the charts to a user-specific path
     Parameters
     ----------
     df: pd.DataFrame
